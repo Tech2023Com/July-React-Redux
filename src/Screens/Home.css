@@ -27,3 +27,9 @@ td , th {
     font-weight: bold;
     font-size: 15px;
 }
+
+.card{
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}

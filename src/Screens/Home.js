@@ -59,58 +59,78 @@ return(
     {loading == true ? 
     <h1>Please Wait Data is loading</h1>
     : 
-    <>
-    <table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">SR#</th>
-      <th scope="col">ID</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Image</th>
-    </tr>
-  </thead>
-  <tbody>
+//     <>
+//     <table class="table table-dark">
+//   <thead>
+//     <tr>
+//       <th scope="col">SR#</th>
+//       <th scope="col">ID</th>
+//       <th scope="col">First Name</th>
+//       <th scope="col">Last Name</th>
+//       <th scope="col">Image</th>
+//     </tr>
+//   </thead>
+//   <tbody>
 
-  {data.map((d , i)=>(
+//   {data.map((d , i)=>(
 
-<tr>
-<th scope="row">{i+1}</th>
-<td>{d.id}</td>
-<td>{d.firstName}</td>
-<td>{d.lastName}</td>
-<td><img src={d.picture} style={{width:50 , height:50}} /></td>
-</tr>
+// <tr>
+// <th scope="row">{i+1}</th>
+// <td>{d.id}</td>
+// <td>{d.firstName}</td>
+// <td>{d.lastName}</td>
+// <td><img src={d.picture} style={{width:50 , height:50}} /></td>
+// </tr>
         
-        ))}
+//         ))}
 
-        <tr  >
+//         <tr  >
         
-          <td colSpan={4}>
-          <div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <button onClick={handlePre} className="bt-1" > Prev </button>
-    </div>
-    <div class="col-sm">
-       <span style={{color:"blue"}} >Data  {page * 5}  of  {total_data}</span> 
-    </div>
-    <div class="col-sm">
-    <button className="bt-1" onClick={handleNext} > Next </button>
-    </div>
-    <div  style={{color:"blue"}} class="col-sm">
-      Page : {d_page}
-    </div>
+//           <td colSpan={4}>
+//           <div class="container">
+//   <div class="row">
+//     <div class="col-sm">
+//       <button onClick={handlePre} className="bt-1" > Prev </button>
+//     </div>
+//     <div class="col-sm">
+//        <span style={{color:"blue"}} >Data  {page * 5}  of  {total_data}</span> 
+//     </div>
+//     <div class="col-sm">
+//     <button className="bt-1" onClick={handleNext} > Next </button>
+//     </div>
+//     <div  style={{color:"blue"}} class="col-sm">
+//       Page : {d_page}
+//     </div>
+//   </div>
+// </div>
+//           </td>
+//         </tr>
+   
+   
+//   </tbody>
+// </table>
+    
+//     </>
+
+
+<>
+<div className="container">
+
+{data.map((d,i)=>(
+  <div class="card" style={{width: '18rem'}}>
+  <img class="card-img-top" src={d.picture} alt="Card image cap" />
+  <div class="card-body">
+    <h5 class="card-title">{d.firstName} {d.lastName}</h5>
+    <p class="card-text">ID Number : {d.id}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
-          </td>
-        </tr>
-   
-   
-  </tbody>
-</table>
-    
-    </>
+))}
+
+</div>
+</>
+
+
 }
     
         </div>
