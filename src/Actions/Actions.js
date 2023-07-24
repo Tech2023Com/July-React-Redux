@@ -11,10 +11,10 @@ const config = {
     }
   };
 
-export const handleAPICall =  () =>{
+export const handleAPICall =  (l , p) =>{
     return dispatch =>{
         dispatch(dataLoading())
-        axios.get('https://dummyapi.io/data/v1/user' , config).then((res)=>{
+        axios.get(`https://dummyapi.io/data/v1/user?page=${p}&limit=${l}` , config).then((res)=>{
             dispatch(dataSuccess(res.data))
         }).catch((err)=>{
             dispatch(dataFailure(err.response.data))
